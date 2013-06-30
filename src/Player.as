@@ -7,7 +7,6 @@ package
 	import org.flixel.*;
 	public class Player extends FlxSprite
 	{
-		
 		public function Player(X:Number, Y:Number) 
 		{
 			super(X, Y);
@@ -21,7 +20,11 @@ package
 		
 		override public function update():void
 		{				
-			
+			if (velocity.x > 0)
+				facing = FlxObject.RIGHT;
+			else if (velocity.x < 0)
+				facing = FlxObject.LEFT;
+				
 			super.update();
 		}
 		
